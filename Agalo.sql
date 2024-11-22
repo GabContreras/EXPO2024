@@ -3,6 +3,7 @@
 //Varchar2(50) para poder usar el UUID
 //Number para auto incremento
 //Prueba equis
+//Prueba 2
 
 CREATE TABLE DEPARTAMENTO(
 IdDepartamento INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
