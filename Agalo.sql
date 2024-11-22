@@ -5,6 +5,7 @@
 //Prueba equis
 //Prueba 2
 //:'v
+  //Blibliblibiblib
 CREATE TABLE DEPARTAMENTO(
 IdDepartamento INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 Nombre varchar2(50)
