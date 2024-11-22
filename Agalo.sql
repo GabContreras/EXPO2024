@@ -4,7 +4,7 @@
 //Number para auto incremento
 //Prueba equis
 //Prueba 2
-
+//:'v
 CREATE TABLE DEPARTAMENTO(
 IdDepartamento INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 Nombre varchar2(50)
