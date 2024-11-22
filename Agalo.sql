@@ -4,7 +4,7 @@
 //Number para auto incremento
 //Prueba equis
 //Prueba 2
-//:'v
+//asojdjasdsd
   //Blibliblibiblib
 CREATE TABLE DEPARTAMENTO(
 IdDepartamento INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
