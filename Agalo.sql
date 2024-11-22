@@ -5,6 +5,7 @@
 //sdkposaoo
 //Prueba 2
 //asojdjasdsd
+  //PASopsdoapcskdie
   //Blibliblibiblib
 CREATE TABLE DEPARTAMENTO(
 IdDepartamento INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
