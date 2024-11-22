@@ -2,7 +2,7 @@
 
 //Varchar2(50) para poder usar el UUID
 //Number para auto incremento
-
+//Prueba equis
 
 CREATE TABLE DEPARTAMENTO(
 IdDepartamento INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -29,7 +29,7 @@ CREATE TABLE EMPLEADOR (
     Contrasena VARCHAR2(250) NOT NULL,
     CONSTRAINT FkDepartamentoEmpleador FOREIGN KEY (IdDepartamento) REFERENCES DEPARTAMENTO(IdDepartamento) ON DELETE CASCADE);
 
--- Limitar a 25,000 m·ximo 
+-- Limitar a 25,000 m√°ximo 
 CREATE TABLE TRABAJO (
     IdTrabajo INT PRIMARY KEY, 
     Titulo VARCHAR2(50) NOT NULL,
@@ -115,7 +115,7 @@ BEGIN
         'INSERT', 
         :NEW.IdEmpleador, 
         TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS'),
-        'Se creÛ un trabajo con descripciÛn: ' || :NEW.Descripcion,
+        'Se cre√≥ un trabajo con descripci√≥n: ' || :NEW.Descripcion,
         :NEW.IdTrabajo
     );
 END;
@@ -129,10 +129,10 @@ BEGIN
     INSERT INTO AUDITORIA (TablaAfectada, Operacion, Usuario, FechaAccion, Detalles, IdTrabajo)
     VALUES (
     'Trabajo',
-    'UPDATE',                           -- Tipo de operaciÛn (actualizaciÛn)
-    :OLD.IdEmpleador,                   -- ID del empleador que realizÛ la operaciÛn
-    SYSDATE,                            -- Fecha actual de la operaciÛn
-   'Trabajo con DescripciÛn ' || :OLD.Descripcion || ' fue marcado como inactivo.',-- Detalle
+    'UPDATE',                           -- Tipo de operaci√≥n (actualizaci√≥n)
+    :OLD.IdEmpleador,                   -- ID del empleador que realiz√≥ la operaci√≥n
+    SYSDATE,                            -- Fecha actual de la operaci√≥n
+   'Trabajo con Descripci√≥n ' || :OLD.Descripcion || ' fue marcado como inactivo.',-- Detalle
     :OLD.IdTrabajo
     );
 END;
@@ -145,10 +145,10 @@ BEGIN
     INSERT INTO AUDITORIA (TablaAfectada, Operacion, Usuario, FechaAccion, Detalles, IdTrabajo)
     VALUES (
     'Trabajo',
-    'UPDATE',                           -- Tipo de operaciÛn (actualizaciÛn)
-    :OLD.IdEmpleador,                   -- ID del empleador que realizÛ la operaciÛn
-    SYSDATE,                            -- Fecha actual de la operaciÛn
-   'Trabajo con DescripciÛn ' || :OLD.Descripcion || ' fue reactivado.',-- Detalle
+    'UPDATE',                           -- Tipo de operaci√≥n (actualizaci√≥n)
+    :OLD.IdEmpleador,                   -- ID del empleador que realiz√≥ la operaci√≥n
+    SYSDATE,                            -- Fecha actual de la operaci√≥n
+   'Trabajo con Descripci√≥n ' || :OLD.Descripcion || ' fue reactivado.',-- Detalle
     :OLD.IdTrabajo
     );
 END;
@@ -166,7 +166,7 @@ SELECT Trabajoseq.NEXTVAL INTO:NEW.IdTrabajo
 FROM DUAL;
 END;
 
-//Procedimiento almacenado para verificar correos electrÛnicos
+//Procedimiento almacenado para verificar correos electr√≥nicos
 CREATE OR REPLACE PROCEDURE VerificarCorreoElectronico(
     p_Nombre IN VARCHAR2,
     p_Usuario IN VARCHAR2,
@@ -177,9 +177,9 @@ CREATE OR REPLACE PROCEDURE VerificarCorreoElectronico(
 ) AS
     v_patronRegex VARCHAR2(100) := '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$';
 BEGIN
-    -- Verificar si el correo electrÛnico cumple con el patrÛn
+    -- Verificar si el correo electr√≥nico cumple con el patr√≥n
     IF NOT REGEXP_LIKE(p_CorreoElectronico, v_patronRegex) THEN
-        RAISE_APPLICATION_ERROR(-20001, 'Correo electrÛnico no v·lido.');
+        RAISE_APPLICATION_ERROR(-20001, 'Correo electr√≥nico no v√°lido.');
     END IF;
 
     -- Insertar el usuario en la tabla UsuarioEscritorio
@@ -189,32 +189,32 @@ BEGIN
 END VerificarCorreoElectronico;
 
 // INSERTS a tablas normalizadas por datos repetidos
-INSERT INTO AreaDeTrabajo (nombreareadetrabajo) VALUES ('Trabajo domÈstico');
+INSERT INTO AreaDeTrabajo (nombreareadetrabajo) VALUES ('Trabajo dom√©stico');
 INSERT INTO AreaDeTrabajo (nombreareadetrabajo) VALUES ('Freelancers');
 INSERT INTO AreaDeTrabajo (nombreareadetrabajo) VALUES ('Trabajos remotos');
 INSERT INTO AreaDeTrabajo (nombreareadetrabajo) VALUES ('Servicios de entrega');
-INSERT INTO AreaDeTrabajo (nombreareadetrabajo) VALUES ('Sector de la construcciÛn');
-INSERT INTO AreaDeTrabajo (nombreareadetrabajo) VALUES ('¡rea de la salud');
-INSERT INTO AreaDeTrabajo (nombreareadetrabajo) VALUES ('Sector de la hostelerÌa');
+INSERT INTO AreaDeTrabajo (nombreareadetrabajo) VALUES ('Sector de la construcci√≥n');
+INSERT INTO AreaDeTrabajo (nombreareadetrabajo) VALUES ('√Årea de la salud');
+INSERT INTO AreaDeTrabajo (nombreareadetrabajo) VALUES ('Sector de la hosteler√≠a');
 INSERT INTO AreaDeTrabajo (nombreareadetrabajo) VALUES ('Servicios profesionales');
-INSERT INTO AreaDeTrabajo (nombreareadetrabajo) VALUES ('¡rea de ventas y atenciÛn al cliente');
-INSERT INTO AreaDeTrabajo (nombreareadetrabajo) VALUES ('EducaciÛn y enseÒanza');  
+INSERT INTO AreaDeTrabajo (nombreareadetrabajo) VALUES ('√Årea de ventas y atenci√≥n al cliente');
+INSERT INTO AreaDeTrabajo (nombreareadetrabajo) VALUES ('Educaci√≥n y ense√±anza');  
 INSERT INTO AreaDeTrabajo (nombreareadetrabajo) VALUES ('Otros');  
 
-Insert into DEPARTAMENTO(Nombre) values ('Ahuachap·n');
-Insert into DEPARTAMENTO(Nombre) values ('CabaÒas');
+Insert into DEPARTAMENTO(Nombre) values ('Ahuachap√°n');
+Insert into DEPARTAMENTO(Nombre) values ('Caba√±as');
 Insert into DEPARTAMENTO(Nombre) values ('Chalatenango');
-Insert into DEPARTAMENTO(Nombre) values ('Cuscatl·n');
+Insert into DEPARTAMENTO(Nombre) values ('Cuscatl√°n');
 Insert into DEPARTAMENTO(Nombre) values ('La Libertad');
-Insert into DEPARTAMENTO(Nombre) values ('Moraz·n');
+Insert into DEPARTAMENTO(Nombre) values ('Moraz√°n');
 Insert into DEPARTAMENTO(Nombre) values ('La Paz');
 Insert into DEPARTAMENTO(Nombre) values ('Santa Ana');
 Insert into DEPARTAMENTO(Nombre) values ('San Miguel');
 Insert into DEPARTAMENTO(Nombre) values ('San Vicente');
 Insert into DEPARTAMENTO(Nombre) values ('San Salvador');
 Insert into DEPARTAMENTO(Nombre) values ('Sonsonate');
-Insert into DEPARTAMENTO(Nombre) values ('La UniÛn');
-Insert into DEPARTAMENTO(Nombre) values ('Usulut·n');
+Insert into DEPARTAMENTO(Nombre) values ('La Uni√≥n');
+Insert into DEPARTAMENTO(Nombre) values ('Usulut√°n');
 
 //Insert roles de escritorio
 INSERT INTO ROLESCRITORIO(Rol) Values('Admin');
@@ -224,15 +224,15 @@ commit;
 
 //Inner join para ver Trabajo
 SELECT 
-    T.IdTrabajo AS "N˙mero de trabajo",
-    T.Titulo AS "TÌtulo",
-    A.NombreAreaDetrabajo AS "¡rea de trabajo",
-    T.Descripcion AS "DescripciÛn",
-    T.IdEmpleador AS "CÛdigo de empleador",
+    T.IdTrabajo AS "N√∫mero de trabajo",
+    T.Titulo AS "T√≠tulo",
+    A.NombreAreaDetrabajo AS "√Årea de trabajo",
+    T.Descripcion AS "Descripci√≥n",
+    T.IdEmpleador AS "C√≥digo de empleador",
     E.NombreRepresentante AS "Nombre del empleador",
-    E.CorreoElectronico AS "Correo ElectrÛnico de contacto",
-    E.NumeroTelefono AS "N˙mero de contacto",
-    T.Direccion AS "DirecciÛn del trabajo",
+    E.CorreoElectronico AS "Correo Electr√≥nico de contacto",
+    E.NumeroTelefono AS "N√∫mero de contacto",
+    T.Direccion AS "Direcci√≥n del trabajo",
     T.Experiencia AS "Experiencia requerida",
     T.Requerimientos,
     T.Salario, 
@@ -246,14 +246,14 @@ AreaDeTrabajo A ON T.IdAreaDeTrabajo = A.IdAreaDeTrabajo;
 
 //INNER JOIN para ver solicitudes
 SELECT 
-    S.IdSolicitante AS "CÛdigo del solicitante",
+    S.IdSolicitante AS "C√≥digo del solicitante",
     S.Nombre AS "Nombre del solicitante",
-    S.CorreoElectronico AS "Correo ElectrÛnico del solicitante",
-    S.Telefono AS "TelÈfono del solicitante",
-    T.Titulo AS "TÌtulo del trabajo",
-    A.NombreAreaDetrabajo AS "¡rea de trabajo",
-    T.Descripcion AS "DescripciÛn del trabajo",
-    T.Direccion AS "DirecciÛn del trabajo",
+    S.CorreoElectronico AS "Correo Electr√≥nico del solicitante",
+    S.Telefono AS "Tel√©fono del solicitante",
+    T.Titulo AS "T√≠tulo del trabajo",
+    A.NombreAreaDetrabajo AS "√Årea de trabajo",
+    T.Descripcion AS "Descripci√≥n del trabajo",
+    T.Direccion AS "Direcci√≥n del trabajo",
     T.Salario AS "Salario",
     T.Beneficios AS "Beneficios",
     Sol.FechaSolicitud AS "Fecha de solicitud",
@@ -330,8 +330,8 @@ select * from trabajo;
 select * from AreadeTrabajo
 delete from Empleador where idEmpleador = 'fdc019cf-6449-4655-8913-685ffbb9bf1b';
 
-SELECT * FROM EMPLEADOR WHERE CorreoElectronico = 'contacto@innovaciones.com.sv' AND Contrasena = 'contrase√±a1';
-SELECT * FROM SOLICITANTE WHERE CorreoElectronico =  'ana.martinez@example.com' AND Contrasena = 'contrase√±a1';
+SELECT * FROM EMPLEADOR WHERE CorreoElectronico = 'contacto@innovaciones.com.sv' AND Contrasena = 'contrase√É¬±a1';
+SELECT * FROM SOLICITANTE WHERE CorreoElectronico =  'ana.martinez@example.com' AND Contrasena = 'contrase√É¬±a1';
 SELECT * FROM ESTADOSOLICITANTE ;
 
 
