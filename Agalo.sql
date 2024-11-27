@@ -6,7 +6,7 @@
 //Prueba 2
 //asojdjasdsd
   //PASopsdoapcskdie
-  //x
+  //xbj
   
 CREATE TABLE DEPARTAMENTO(
 IdDepartamento INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
