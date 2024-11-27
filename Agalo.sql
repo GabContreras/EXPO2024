@@ -6,7 +6,8 @@
 //Prueba 2
 //asojdjasdsd
   //PASopsdoapcskdie
-  //Blibliblibiblib
+  //Blibliblibiblibiuosdai
+  
 CREATE TABLE DEPARTAMENTO(
 IdDepartamento INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 Nombre varchar2(50)
