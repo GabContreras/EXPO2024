@@ -90,8 +90,6 @@ class DetallePublicacion : AppCompatActivity() {
             // on below line we are setting
             // content view to our view.
             dialog.setContentView(view)
-            // Configura el comportamiento del BottomSheet
-            val bottomSheetBehavior = BottomSheetBehavior.from(view.parent as View)
 
 // Establecer el ancho máximo
             val params = view.layoutParams

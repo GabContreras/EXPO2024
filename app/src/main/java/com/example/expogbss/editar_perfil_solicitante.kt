@@ -233,22 +233,6 @@ class editar_perfil_solicitante : AppCompatActivity() {
         val btnEditarPerfilSolicitante =
             findViewById<ImageButton>(R.id.btnEditarPerfilSolicitanteEdit)
 
-//        txtDireccionSolicitanteEdit.setOnClickListener {
-//            if (ContextCompat.checkSelfPermission(
-//                    this, Manifest.permission.ACCESS_FINE_LOCATION
-//                ) != PackageManager.PERMISSION_GRANTED
-//            ) {
-//                // Solicitar el permiso
-//                ActivityCompat.requestPermissions(
-//                    this,
-//                    arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
-//                    LOCATION_REQUEST_CODE
-//                )
-//            } else {
-//                // Obtener la ubicación actual si ya tiene permiso
-//                obtenerUbicacionActual()
-//            }
-//        }
 
 
         btnEditarPerfilSolicitante.setOnClickListener {
@@ -442,65 +426,4 @@ class editar_perfil_solicitante : AppCompatActivity() {
             }
         }
     }
-
-//    // Solicitar permisos de ubicación
-//    private fun solicitarPermisoUbicacion() {
-//        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-//            ActivityCompat.requestPermissions(
-//                this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_REQUEST_CODE
-//            )
-//        } else {
-//            obtenerUbicacionActual()
-//        }
-//    }
-//
-//    // Obtener la ubicación actual
-//    private fun obtenerUbicacionActual() {
-//        // Verificamos el permiso antes de intentar acceder a la ubicación
-//        if (ContextCompat.checkSelfPermission(
-//                this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-//            Toast.makeText(this, "Permiso de ubicación no concedido", Toast.LENGTH_SHORT).show()
-//            return
-//        }
-//
-//        try {
-//            fusedLocationClient.lastLocation.addOnSuccessListener { location: Location? ->
-//                if (location != null) {
-//                    val latitud = location.latitude
-//                    val longitud = location.longitude
-//                    obtenerNombreLugar(latitud, longitud)
-//                } else {
-//                    Toast.makeText(this, "No se pudo obtener la ubicación", Toast.LENGTH_SHORT).show()
-//                }
-//            }.addOnFailureListener {
-//                Toast.makeText(this, "Error al obtener la ubicación", Toast.LENGTH_SHORT).show()
-//            }
-//        } catch (e: SecurityException) {
-//            // Manejo de la excepción en caso de que la seguridad falle
-//            Toast.makeText(this, "Error de seguridad: ${e.message}", Toast.LENGTH_SHORT).show()
-//        }
-//    }
-    private var latitudActual: Double? = null
-    private var longitudActual: Double? = null
-//
-//    // Convertir coordenadas a dirección con Geocoder
-//    private fun obtenerNombreLugar(latitud: Double, longitud: Double) {
-//        this.latitudActual = latitud  // Guardar latitud
-//        this.longitudActual = longitud  // Guardar longitud
-//
-//        val geocoder = Geocoder(this, Locale.getDefault())
-//        try {
-//            val direcciones = geocoder.getFromLocation(latitud, longitud, 1)
-//            if (direcciones != null && direcciones.isNotEmpty()) {
-//                val direccion = direcciones[0].getAddressLine(0)
-//                val txtDireccionSolicitante = findViewById<EditText>(R.id.txtDireccionSolicitante)
-//                txtDireccionSolicitante.setText(direccion)
-//            } else {
-//                Toast.makeText(this, "No se encontró una dirección válida", Toast.LENGTH_SHORT).show()
-//            }
-//        } catch (e: IOException) {
-//            e.printStackTrace()
-//            Toast.makeText(this, "Error al convertir coordenadas en dirección", Toast.LENGTH_SHORT).show()
-//        }
-//    }
 }
