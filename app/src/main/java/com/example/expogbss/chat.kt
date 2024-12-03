@@ -118,8 +118,10 @@ class chat : Fragment() {
                         count: Int,
                         after: Int
                     )
-                    //Vacío porque sí
-                    {}
+                    {
+                        //Vacío porque sí
+
+                    }
 
                     override fun onTextChanged(
                         s: CharSequence?,
@@ -132,8 +134,8 @@ class chat : Fragment() {
 
                     }
 
-  //Vacío porque sí
                     override fun afterTextChanged(s: Editable?) {
+      //Vacío porque sí
 
                     }
                 })
