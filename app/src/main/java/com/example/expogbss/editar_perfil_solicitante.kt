@@ -254,8 +254,7 @@ class editar_perfil_solicitante : AppCompatActivity() {
         btnEditarPerfilSolicitante.setOnClickListener {
             // Deshabilitar el botón para evitar múltiples clicks
             btnEditarPerfilSolicitante.isEnabled = false
-            val latitud = this.latitudActual ?: 0.0
-            val longitud = this.longitudActual ?: 0.0
+
 
             // Obtener los valores de los EditText
             val nombreSolicitante = txtNombreSolicitanteEdit.text.toString().trim()
@@ -454,7 +453,7 @@ class editar_perfil_solicitante : AppCompatActivity() {
 //            obtenerUbicacionActual()
 //        }
 //    }
-
+//
 //    // Obtener la ubicación actual
 //    private fun obtenerUbicacionActual() {
 //        // Verificamos el permiso antes de intentar acceder a la ubicación
@@ -483,7 +482,7 @@ class editar_perfil_solicitante : AppCompatActivity() {
 //    }
     private var latitudActual: Double? = null
     private var longitudActual: Double? = null
-
+//
 //    // Convertir coordenadas a dirección con Geocoder
 //    private fun obtenerNombreLugar(latitud: Double, longitud: Double) {
 //        this.latitudActual = latitud  // Guardar latitud
